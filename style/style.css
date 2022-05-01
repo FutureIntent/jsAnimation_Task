@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(red, yellow);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container .wrapper {
+    display: block;
+    position: relative;
+    width: 70%;
+    min-height: 90vh;
+    border-style: solid;
+    border-width: 1vw;
+    border-color: red;
+    background-color: white;
+    animation-name: wrapper;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.wrapper .palm {
+content: url('./../assets/palm.png');
+position: absolute;
+width: 40%;
+z-index: 7;
+right: 0%;
+bottom: 5%;
+}
+
+.wrapper .sand {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 20vw;
+    height: 20vw;
+    border-top-left-radius: 20vw;
+    background-color: rgb(200,160,110);
+    border-right: 0;
+    border-bottom: 0;
+    z-index: 6;
+}
+
+.wrapper .sun {
+    position: relative;
+    left: 65%;
+    top: 0.5em;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    border-color: lightgoldenrodyellow;
+    background-image: radial-gradient(darkgoldenrod, yellow);
+    z-index: 3;
+}
+
+.wrapper .clouds {
+    content: url('./../assets/clouds.gif');
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    width: 30%;
+    z-index: 5;
+}
+
+.wrapper .reflection {
+    content: url('./../assets/clouds.gif');
+    position: absolute;
+    bottom: 4%;
+    left: 20%;
+    transform: scaleY(-1);
+    transform: rotate(10deg);
+    width: 20%;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.wrapper .deepWater {
+    position: absolute;
+    background-color: dodgerblue;
+    height: 40%;
+    width: 100%;
+    bottom: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+.wrapper .sky {
+    position: absolute;
+    background-image: linear-gradient(darkslateblue, deepskyblue);
+    height: 60%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+}
+
+.wrapper .wish {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    left: -17%;
+    top: 45%;
+    transform: rotate(270deg);
+    font-family: 'Play', sans-serif;
+    font-size: 6vw;
+    color: rgba(200, 0, 100, 1);
+    z-index: 10;
+}
+
+.wrapper .sun .star {
+    content: url('./../assets/star.svg');
+    position: absolute;
+    left:25%;
+    top: 25%;
+    width: 50%;
+}
+
+@keyframes wrapper {
+    0% {
+        border-color: indianred;
+    }
+
+    25% {
+        border-color: orange;
+    }
+
+    50% {
+        border-color: yellow;
+    }
+
+    75% {
+        border-color: yellowgreen;
+    }
+
+    100% {
+        border-color: greenyellow;
+    }
+}
+
+/* Large devices (laptops/desktops, 993px and up) */
+@media only screen and (max-device-width: 1200px) and (min-device-width: 993px) {
+    .container .wrapper {
+        border-width: 0.5vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 769px and up) */
+@media only screen and (max-device-width: 992px) and (min-device-width: 769px) {
+}
+
+/* Small devices (portrait tablets and large phones, 601px and up) */
+@media only screen and (max-device-width: 768px) and (min-device-width: 601px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-device-width: 600px) and (min-device-width: 0px) {
+    .wrapper .sun {
+        width: 25vw;
+        height: 25vw;
+        left: 60%;
+        top: 2em;
+    }
+
+    .wrapper .sand {
+        width: 30vw;
+        height: 30vw;
+        border-top-left-radius: 30vw;
+    }
+
+    .wrapper .palm {
+    width: 50%;
+    }
+
+    .wrapper .clouds {
+    width: 45%;
+    top: 10%
+    }
+
+    .wrapper .sun .star {
+    width: 50%;
+    top: 22%;
+    left: 22%;
+    }
+
+    .wrapper .reflection {
+    width: 40%;
+    bottom:20%;
+    }
+
+    .wrapper .wish {
+    font-size: 11vw;
+    left: -35%;
+    }
+}
